@@ -23,6 +23,6 @@
 
 		
 ## Finish finding and print
->>> print 'biggest distance is ->', biggestDistance
+>>> print('biggest distance is ->', biggestDistance)
 biggest distance is -> 9.43398113206
 >>> 
