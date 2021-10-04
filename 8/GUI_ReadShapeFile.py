@@ -49,13 +49,13 @@ class Polygon:
         ## area = sum of ((x[i+1]*y[i]-x[i]*y[i+1]))/2        
         """
         while index < len(self.points)-1:
-            print 'points: ', self.points[index].x, self.points[index].y
+            print('points: ', self.points[index].x, self.points[index].y)
             
             currentArea = (1.0/2.0)*(self.points[index+1].x * self.points[index].y - \
                           self.points[index].x * self.points[index+1].y)
             area = area + currentArea            
             index += 1
-        print 'area is :', area
+        print('area is :', area)
         return area
     def getCentroid(self):
         index = 0       
@@ -67,9 +67,9 @@ class Polygon:
         ## ybar = sum of ((y[i+1]+y[i])*(x[i+1]*y[i]-x[i]*y[i+1]))/6*area
         """
         area = self.getArea()
-        print "Area is: ", area
+        print("Area is: ", area)
         while index < len(self.points)-1:
-            print self.points[index+1].x 
+            print(self.points[index+1].x )
             curentXBar = (1.0/(6.0*area))*(self.points[index+1].x + self.points[index].x)\
                          *(self.points[index+1].x * self.points[index].y - \
                             self.points[index].x * self.points[index+1].y)
@@ -79,7 +79,7 @@ class Polygon:
                             self.points[index].x * self.points[index+1].y)
             yBar = yBar + curentYBar
             index += 1
-        print 'xBar, yBar', xBar, yBar
+        print('xBar, yBar', xBar, yBar)
         centroid = Point(xBar, yBar) 
         return centroid
 
@@ -91,13 +91,13 @@ def readPoint(fileName):
     s = f.read(4) #Get the file length
     b = struct.unpack('>i',s)
     featNum = (b[0]*2-100)/28
-    print 'file Len and feature Num:', b, featNum
+    print('file Len and feature Num:', b, featNum)
     points = []
     for i in range(0,featNum):
         shpFile.seek(100+12+i*28) ## 12 bytes = Record Number + Content Length + Shape Type
         s = f.read(16)
         x,y = struct.unpack('dd',s)
-        print i, str(i)+':' + str(x) +','+str(y)
+        print(i, str(i)+':' + str(x) +','+str(y))
         point = Point(x,y)
         points.append(point)
     shpFile.close()
@@ -185,7 +185,7 @@ def getShapeType(fileName):
     shpFile.seek(32) ## Jump to the starting bytes of shape type
     s = shpFile.read(4)
     shapeType = struct.unpack("i",s)
-    print "shapeType is :", shapeType
+    print("shapeType is :", shapeType)
     return shapeType[0] ##shapeType is a tuple data type, return the first item
 
 def readShapeFile(fileName, canvas):    
@@ -207,13 +207,13 @@ def readShapeFile(fileName, canvas):
         
    
 def drawPolylineOrPolygon(features, canvas):
-    print '------------Begin to draw features-------------'
+    print('------------Begin to draw features-------------')
     ratiox = windowWidth/(maxX-minX)
     ratioy = windowHeight/(maxY-minY)
     ratio = ratiox
     if ratio>ratioy:
         ratio = ratioy
-    print 'maxX, minX, maxY, minY, ratio',  maxX, minX, maxY, minY, ratio
+    print('maxX, minX, maxY, minY, ratio',  maxX, minX, maxY, minY, ratio)
     for feature in features:
         xylist = []
         for point in feature.points:
@@ -232,7 +232,7 @@ def drawPolylineOrPolygon(features, canvas):
                 tempXYlist.append(xylist[m*2+1])
             #print tempXYlist
             canvas.create_line(tempXYlist,fill='blue')
-    print '------------Finish to draw features-------------'
+    print('------------Finish to draw features-------------')
     
 ## Set up global variables
 windowWidth, windowHeight  = 800, 600
@@ -265,9 +265,9 @@ def main():
     # different commands to the menu
     """
     def openFileHandler():
-        print 'Open File: '
+        print('Open File: ')
         shpFileName = askopenfilename(filetypes=[("allfiles","*"),("shapefiles","*.shp")])
-        print 'shpFile is :', shpFileName
+        print('shpFile is :', shpFileName)
         readShapeFile(shpFileName, canvas)
         #polylines = readPolylineFile(shpFileName)
         ## draw the polyline with canvas
@@ -276,7 +276,7 @@ def main():
     mbFile.menu.add_command(label='Open', command =openFileHandler)
 
     def quitHandler():
-        print 'GoodBye'
+        print('GoodBye')
         os._exit(1)
     mbFile.menu.add_command(label="Exit", command=quitHandler)
     
