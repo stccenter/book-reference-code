@@ -30,7 +30,7 @@ header = struct.unpack(">iiiiiii",s)
 fileLength = header[len(header)-1]
 # calculate polyline numbers in the shape file based on index file length
 polylineNum = (fileLength*2-100)/8
-print 'fileLength, polylineNum:',fileLength, polylineNum
+print('fileLength, polylineNum:',fileLength, polylineNum)
 # read other 72 bytes in header
 s = shxFile.read(72)
 # convert into values
@@ -38,7 +38,7 @@ header = struct.unpack("<iidddddddd",s)
 # get boundingbox for the shape file 
 minX, minY, maxX, maxY = header[2],header[3],header[4],header[5]
 
-##3. read records¡¯ meta information, such as offset,
+##3. read recordsÂ¡Â¯ meta information, such as offset,
 ##   and content length for each record,
 
 # define an empty list for holding offset of each feature in main file
@@ -51,10 +51,10 @@ for i in range(0,polylineNum):
     s = shxFile.read(4)
     offset = struct.unpack('>i',s)
     # keep the offset in the list
-    print 'offset is:', offset
+    print('offset is:', offset)
     recordsOffset.append(offset[0]*2)
 # close the index file
-print recordsOffset
+print(recordsOffset)
 
 #--------Part 2: read each polyline and prepare them in right order. 
 # open the main file for read in binary
@@ -75,7 +75,7 @@ for offset in recordsOffset:
     polyline = Polyline()
     partsNum, pointsNum = struct.unpack('ii',s)
     polyline.partsNum = partsNum
-    print 'partsNum, pointsNum: ',partsNum, pointsNum
+    print('partsNum, pointsNum: ',partsNum, pointsNum)
 
     # read the list of parts holding the starting sequential number of point
     # in that part
@@ -91,7 +91,7 @@ for offset in recordsOffset:
     str = ''
     for i in range(partsNum):
         str = str+'i'
-    print 'str is :', str
+    print('str is :', str)
     # get the starting point number of each part and keep in a partsIndex list
     polyline.partsIndex = struct.unpack(str,s)
     # loop through each point in the polyline
