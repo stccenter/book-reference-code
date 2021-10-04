@@ -5,5 +5,5 @@
 3
 >>> a = lambda x,y:x+y
 >>> b = a(1,2)
->>> print b
+>>> print(b)
 3
