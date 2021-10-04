@@ -19,5 +19,5 @@ cursor:
 
 # calculate and print the area of each land cover type
 for ele in counts:
-	print 'The area of landcover type {0} is: {1}'.\
-	format(ele['type'],ele['count']/totalCount*area)
+	print('The area of landcover type {0} is: {1}'.\
+	format(ele['type'],ele['count']/totalCount*area))
