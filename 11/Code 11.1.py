@@ -1,5 +1,5 @@
 #create a route layer from the network dataset
-
+#Please change this file path to your data location
 arcpy.env.workspace = 'C:\\ArcGISdata\\chp11data'
 
 routeLy = arcpy.na.MakeRouteLayer(in_network_dataset = "roads_ND.nd", out_network_analysis_layer =
