@@ -9,5 +9,5 @@
 	return commonList
 
 >>> results = getCommonList(polygon1, polygon2)
->>> print results
+>>> print(results)
 [(0, 0), (1, 1)]
