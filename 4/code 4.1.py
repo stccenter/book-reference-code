@@ -1,14 +1,14 @@
 >>> if []:
-	print True
+	print(True)
 else:
-	print False
+	print(False)
 
 	
 False
 >>> if 0:
-	print True
+	print(True)
 else:
-	print False
+	print(False)
 
 	
 False
