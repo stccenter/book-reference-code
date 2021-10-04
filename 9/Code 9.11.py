@@ -7,6 +7,7 @@ array = numpy.array([(1,(471316.3835861763, 5000488.782036674)),
 					numpy.dtype([('idfield', numpy.int32),('XY','<f8',2)]))
 
 # create the feature class with the field XY in the array
+#Please change this file path to your data location
 feat = arcpy.CreateFeatureclass_management("O:\\Book\\Code\\9\\chp9Data\\Default.gdb", "out2", "POINT")
 cursor = arcpy.da.InsertCursor(feat, ["SHAPE@XY"])
 
