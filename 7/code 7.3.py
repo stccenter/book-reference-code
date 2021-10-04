@@ -8,5 +8,6 @@ KeyboardInterrupt
 >>> while True
 SyntaxError: invalid syntax
 >>> while True:
-	
+	
+
 	
