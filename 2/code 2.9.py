@@ -11,8 +11,8 @@
 	def getLength(self):
 		length = 0.0
 		for i in range(len(self.points)-1):
-			length+=math.sqrt((points[i].x-points[i+1].x)**2+
-					  (points[i].y-points[i+1].y)**2)
+			length+=math.sqrt((self.points[i].x-self.points[i+1].x)**2+
+					  (self.points[i].y-self.points[i+1].y)**2)
 		return length
 
 	
