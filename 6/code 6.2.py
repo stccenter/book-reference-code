@@ -4,5 +4,5 @@
 >>> s = struct.pack('<ibdfd',i,b,x,y,z)
 >>> len(s)
 >>> result = struct.unpack('<i?dfd',s)
->>> print result
+>>> print(result)
 (100, True, -180.0, 90.0, 0.212)
