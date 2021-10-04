@@ -2,11 +2,11 @@
 >>> y = 8
 >>> z = [6,7,8,9]
 >>> if y in x:
-	print y, 'is in', x
+	print(y, 'is in', x)
 elif y in z:
-	print y, 'is in z', z
+	print(y, 'is in z', z)
 else:
-	print y, 'is not in either x or z', x, z
+	print(y, 'is not in either x or z', x, z)
 
 	
 8 is in z [6, 7, 8, 9]
