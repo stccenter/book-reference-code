@@ -1,6 +1,6 @@
 import arcpy
 import numpy
-
+#Please change this file path to your data location
 output = "O:\\Book\\Code\\9\\chp9Data\\Default.gdb\\out"
 # input array
 array = numpy.array([(1,(471316.3835861763, 5000488.782036674)),
