@@ -5,6 +5,6 @@
 	i+=1
 
 	
->>> print total
+>>> print(total)
 5050
 >>> 
