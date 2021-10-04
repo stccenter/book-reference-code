@@ -1,9 +1,9 @@
 import struct
 x,y,z = 100,200,300
 s = struct.pack('>iii',x,y,z)
-print s
+print(s)
 result = struct.unpack('>iii',s)
-print result
+print(result)
 result = struct.unpack('<iii',s)
-print result
+print(result)
 
