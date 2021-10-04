@@ -25,7 +25,7 @@ class lineSegment:
     ## intersect reture inersection point, otherwise return -1         
     def intersect(self, lineSeg):
         if self.p1.x == self.p2.x: ## self parallel to y
-             print 'First line seg verticle'
+             print('First line seg verticle')
              if lineSeg.p1.x == lineSeg.p2.x and lineSeg.p1.x == self.p1.x:
                  return self.overlap(lineSeg)
              else:
@@ -40,7 +40,7 @@ class lineSegment:
                  ## Calcaulate a1 and b1
                  a1 = (self.p2.y - self.p1.y)/(self.p2.x - self.p1.x)
                  b1 = self.p1.y -  a1*self.p1.x
-                 #print "a1 and b1 is : ", a1, b1
+                 #print("a1 and b1 is : ", a1, b1)
                  x0 = lineSeg.p1.x
                  y0 = a1 * x0 + b1
             else:
@@ -63,10 +63,10 @@ class lineSegment:
            and (lineSeg.p1.x-x0)*(x0-lineSeg.p2.x)>=0\
            and (self.p1.y-y0)*(y0-self.p2.y)>=0 \
            and (lineSeg.p1.y-y0)*(y0-lineSeg.p2.y)>=0):
-             print "x0 and y0 belongs two line segment : ", x0, y0
+             print("x0 and y0 belongs two line segment : ", x0, y0)
              return Point(x0, y0)
         else:
-            print "x0 and y0 does not meet the conditions"
+            print("x0 and y0 does not meet the conditions")
             return -1
 
 ## Set up global variables
@@ -95,7 +95,7 @@ def main():
         global startDraw
         global points
         global lineSegs
-        print "startDraw: " , startDraw, x, y
+        print("startDraw: " , startDraw, x, y)
         if startDraw:
             t.setposition(x, y)
             t.dot(5, "blue")
@@ -131,7 +131,7 @@ def main():
         global points 
         global lineSegs
         num = len(points)
-        print 'points number: ', num
+        print('points number: ', num)
         lineNum = len(lineSegs)
         if lineNum > 1: ## Second line            
             t.setposition(lineSegs[1].p1.x, lineSegs[1].p1.y)
@@ -165,7 +165,7 @@ def main():
         startDraw = False
         points = []
         lineSegs = []
-        print 'Clean all features'
+        print('Clean all features')
         t.reset()   ## Reset turtle
     
     cleanDraw = Tkinter.Button(frame, width = 15, text= 'Clean Draw',fg="blue", command=cleanHandler)
@@ -188,7 +188,7 @@ def main():
             Tkinter.Button(win, text='OK', command=win.destroy).pack()
         else:
             ## Draw intersection
-            print 'intesection is : ', result.x, result.y
+            print('intesection is : ', result.x, result.y)
             ## Now label the intersection
             t.penup()    
             t.setposition(result.x, result.y)
@@ -200,7 +200,7 @@ def main():
     checkIntersection.pack()
         ## declare botton event handler and a button
     def quitHandler():
-        print 'GoodBye'
+        print('GoodBye')
         os._exit(1)
     button = Tkinter.Button(frame,width = 15, text= 'Quit',fg="blue", command=quitHandler)
     button.pack() 
