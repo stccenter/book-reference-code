@@ -1,5 +1,5 @@
 # classify elevations into classes
-# set workspace
+# set workspace #Please change this file path to your data location
 arcpy.env.workspace = "C:\\ArcGISdata\\chp10data\\chp10data.gdb"
 
 """
