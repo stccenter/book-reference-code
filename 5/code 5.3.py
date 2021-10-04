@@ -32,13 +32,13 @@
                 coordsLen = len(eachcoords)
                 if index == 2:
                     firstPolyLineNum = coordsLen-1
-                    print 'The first polyline number is : ', firstPolyLineNum
+                    print('The first polyline number is : ', firstPolyLineNum)
                 for i in range(coordsLen-1):
                     singlecoords = eachcoords[i]
-                    #print 'singlecoords,', singlecoords
+                    #print('singlecoords,', singlecoords)
                     xCoord = singlecoords.split(',')[0]
                     yCoord = singlecoords.split(',')[1]
-                    #print 'xCoord and yCoord, ',  xCoord, yCoord
+                    #print('xCoord and yCoord, ',  xCoord, yCoord)
                     point = Points(float(xCoord),float(yCoord))
                     points.append(point)
         
@@ -52,8 +52,8 @@ The first polyline number is :  5
 >>> points = resuts[0]
 >>> firstPolylinePointNum = resuts[1]
 >>> length = len(points)
->>> print 'The total points and the numberof points for firstpolyline is',\
-      length, firstPolylinePointNum
+>>> print('The total points and the numberof points for firstpolyline is',\
+      length, firstPolylinePointNum)
 
 The total points and the numberof points for firstpolyline is 18 5
 
@@ -61,7 +61,7 @@ The total points and the numberof points for firstpolyline is 18 5
 >>> pointsForFirstPoly = points[0:firstPolylinePointNum]
 >>> polyLine1 = Polyline(pointsForFirstPoly)
 >>> lengthForFirstPoly = polyLine1.getLength()
->>> print "Length for first polyline -> ", lengthForFirstPoly
+>>> print("Length for first polyline -> ", lengthForFirstPoly)
 
 Length for first polyline ->  155.775923237
 
@@ -69,6 +69,6 @@ Length for first polyline ->  155.775923237
 >>> pointsForSecondPoly = points[firstPolylinePointNum:]
 >>> polyLine2 = Polyline(pointsForSecondPoly)
 >>> lengthForSecondPoly = polyLine2.getLength()
->>> print "Length for Second polyline -> ", lengthForSecondPoly
+>>> print("Length for Second polyline -> ", lengthForSecondPoly)
 
 Length for Second polyline ->  549.438874589
