@@ -1,3 +1,4 @@
+#Please change this file path to your data location
 inputdata = "O:\\Book\\Code\\9\\chp9Data\\bookSampleData.gdb\\school"
 # create the insert cursor and list the attributes that needs to be filled up with values
 cursor = arcpy.da.InsertCursor(inputdata, ["SCHOOL_NAM", "SHAPE@XY"])
