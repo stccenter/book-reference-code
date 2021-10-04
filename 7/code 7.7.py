@@ -7,7 +7,7 @@
         f.read()
         f.write('This is a test!')
 >>> except IOError:
-        print 'The file does not exist!'
+        print('The file does not exist!')
 >>> finally:
         if f:
             f.close()
