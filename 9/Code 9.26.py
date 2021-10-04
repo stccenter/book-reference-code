@@ -1,4 +1,4 @@
-# set the workspace 
+#Please change this file path to your data location
 arcpy.env.workspace = "O:\\Book\\Code\\9\\chp9Data"
 
 """
