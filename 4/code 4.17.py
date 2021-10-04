@@ -41,7 +41,7 @@ polyline;
 >>> length = len(points) # get the length of points list
 >>> for i in range(length):
            point = points[i]
-           print point.x, point.y ##print the x, y value of each point
+           print(point.x, point.y) ##print the x, y value of each point
 1.0 1.0
 2.0 2.0
 10.0 11.0
