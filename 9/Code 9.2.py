@@ -3,6 +3,7 @@
     In this sample, the workspace is a geodatabase. 
     "bearMove" and "roads" are two feature classes in the geodatabase.
 """
+#Please change this file path to your data location
 arcpy.env.workspace = "O:\\Book\\Code\\9\\chp9Data\\bookSampleData.gdb"
 # ensure bearMove is in workspace first
 arcpy.MakeFeatureLayer_management("bearMove","inferLy")
