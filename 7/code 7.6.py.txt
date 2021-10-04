@@ -4,9 +4,9 @@
 		result = x/y
 		return result
 	except ZeroDivisionError:
-		print 'Division by zero'
+		print('Division by zero')
 	finally:
-		print 'Cleaning up ....'
+		print('Cleaning up ....')
 		del result
 
 		
