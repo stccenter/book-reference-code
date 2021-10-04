@@ -27,14 +27,14 @@ result = 0
 for i in range(10):
      result+=threads[i].total
      
-print '10 threads '
-print result
-print str(time.clock()-starttime) + ' seconds\n'
+print('10 threads ')
+print(result)
+print(str(time.clock()-starttime) + ' seconds\n')
 
 thread = SummingThread(0,1000)
 starttime = time.clock()
 thread.start()
 thread.join()
-print 'single thread'
-print thread.total
-print str(time.clock()-starttime) + ' seconds\n'
+print('single thread')
+print(thread.total)
+print(str(time.clock()-starttime) + ' seconds\n')
