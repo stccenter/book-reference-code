@@ -26,14 +26,14 @@ if multithreading:
     lr1.join()
     lr2.join()
     lr3.join()
-    print (str(time.clock()-starttime) + ' seconds')
+    print(str(time.clock()-starttime) + ' seconds')
 else:
     starttime = time.clock()
     map.addLayer('amtk_sta','yellow')
     map.addLayer('amtk_sta', 'blue')
     map.addLayer('amtk_sta','red')
-    print (str(time.clock()-starttime) + ' seconds')
+    print(str(time.clock()-starttime) + ' seconds')
 
 map.vis()
-print (str(time.clock()-starttime) + ' seconds')
+print(str(time.clock()-starttime) + ' seconds')
 map.root.mainloop()
