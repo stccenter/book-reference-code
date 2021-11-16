@@ -6,3 +6,5 @@ The reference code of each folder is named by its associated chapter of the book
 # Software requirements: 
 * Python 3.x
 * ArcGIS 10.4 and above
+
+For each chapter, please program in sequence since some following on codes dpending on previous codes. 
